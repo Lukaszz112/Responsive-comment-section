@@ -1,7 +1,12 @@
+import { Content } from "./compontents/content/content";
+import Comment from "./compontents/comment/comment";
+import commentData from "../src/data/commentData.json";
+
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Content>
+      <Comment Data={commentData}/>
+    </Content>
   );
 }
 
