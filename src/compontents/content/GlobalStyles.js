@@ -8,6 +8,7 @@ export const GlobalStyles = styled.div`
     align-items:center;
     justify-content: flex-start;
     overflow-y:scroll;
+    font-family: 'Rubik',sans-serif;
     
     *{
         padding:0;

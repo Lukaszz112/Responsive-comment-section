@@ -10,11 +10,18 @@ export const CommentWrapper = styled.div`
 
     .left,.right{
         display:flex;
-        align-items:center;
+
         justify-content:center;
     }
 
+    .left{
+        justify-content:flex-start;
+        align-items:flex-start;
+    }
+
     .right{
+        padding:20px;
         flex-direction:column;
+        align-items:center;
     }
 `
