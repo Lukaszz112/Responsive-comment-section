@@ -22,12 +22,18 @@ export const ScoreBarWrapper = styled.div`
         justify-content:center;
         width:100%;
         height:100%;
+        overflow:hidden;
     }
 
     .plus:hover,.minus:hover{
-        transform:scale(1.5);
-        transform:;
+        svg{
+            transform:scale(1.5);
+        }
         cursor:pointer;
+    }
+
+    .score{
+
     }
 
     .plus{
@@ -38,6 +44,11 @@ export const ScoreBarWrapper = styled.div`
     .minus{
         border-bottom-left-radius:10px;
         border-bottom-right-radius:10px;
+    }
+
+    svg{
+        transition:all .2s ease-in-out;
+
     }
 
 `

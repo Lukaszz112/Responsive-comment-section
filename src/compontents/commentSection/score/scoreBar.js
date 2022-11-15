@@ -9,49 +9,49 @@ class ScoreBar extends React.Component{
         super(props)
         this.state = {
             score: this.props.data,
-            myRate: false,
+            isClassic: true,
             isRatePlus: false,
             isRateMinus: false,
         }
     }
     render(){
         const scorePlusHandle = () =>{
-            if(this.state.isRateMinus || !this.state.myRate){
+            if(this.state.isRatePlus){
                 this.setState({
-                    score:this.props.data+1,
-                    myRate: true,
-                    isRatePlus: true,
+                    isClassic: true,
+                    isRatePlus: false,
                     isRateMinus: false
                 })
             }else this.setState({
-                score:this.props.data,
-                myRate: false,
+                isClassic: false,
+                isRateMinus: false,
+                isRatePlus: true,
             })
         }
 
         const scoreMinusHandle = () =>{
-            if(this.state.isRatePlus || !this.state.myRate){
+            if(this.state.isRateMinus){
                 this.setState({
-                    score:this.props.data-1,
-                    myRate: true,
+                    isClassic: true,
                     isRatePlus: false,
-                    isRateMinus: true
+                    isRateMinus: false
                 })
             }else this.setState({
-                score:this.props.data,
-                myRate: false,
+                isClassic: false,
+                isRatePlus: false,
+                isRateMinus: true,
             })
         }
         return (
             <ScoreBarWrapper>
-                <div className="plus" onClick={scorePlusHandle} state={this.state.isRatePlus}>
-                    <PlusIcon/>
+                <div className="plus" onClick={scorePlusHandle}>
+                    <PlusIcon state={this.state.isRatePlus}/>
                 </div>
-                <div className="score" state={this.state.myRate}>
-                    <p>{this.state.score}</p>
+                <div className="score">
+                    <p>{this.state.isRatePlus ? this.state.score+1:(this.state.isRateMinus ? this.state.score-1:this.state.score)}</p>
                 </div>
-                <div className="minus" onClick={scoreMinusHandle} state={this.state.isRateMinus}>
-                    <MinusIcon/>
+                <div className="minus" onClick={scoreMinusHandle} >
+                    <MinusIcon state={this.state.isRateMinus}/>
                 </div>
             </ScoreBarWrapper>
         )

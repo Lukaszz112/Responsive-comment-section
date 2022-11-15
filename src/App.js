@@ -1,5 +1,5 @@
 import { Content } from "./compontents/content/content";
-import Comment from "./compontents/comment/comment";
+import Comment from "./compontents/commentSection/comment";
 import commentData from "../src/data/commentData.json";
 
 function App() {
