@@ -10,6 +10,7 @@ export const ScoreBarWrapper = styled.div`
     background-color:hsl(228, 33%, 97%);
     padding:5px;
     border-radius:10px;
+
     
     p{
         color:hsl(238, 40%, 52%);
@@ -23,6 +24,8 @@ export const ScoreBarWrapper = styled.div`
         width:100%;
         height:100%;
         overflow:hidden;
+        border:none;
+        background-color:transparent;
     }
 
     .plus:hover,.minus:hover{

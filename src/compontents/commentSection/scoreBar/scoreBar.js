@@ -44,15 +44,15 @@ class ScoreBar extends React.Component{
     render(){
         return (
             <ScoreBarWrapper state={this.state}>
-                <div className="plus" onClick={this.scorePlusHandle}>
+                <button className="plus" onClick={this.scorePlusHandle}>
                     <PlusIcon/>
-                </div>
+                </button>
                 <div className="score">
                     <p>{this.state.isRatePlus ? this.state.score+1:(this.state.isRateMinus ? this.state.score-1:this.state.score)}</p>
                 </div>
-                <div className="minus" onClick={this.scoreMinusHandle}>
+                <button className="minus" onClick={this.scoreMinusHandle}>
                     <MinusIcon/>
-                </div>
+                </button>
             </ScoreBarWrapper>
         )
     }

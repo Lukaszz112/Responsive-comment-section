@@ -1,7 +1,8 @@
 import styled from "styled-components";
 export const CommentWrapper = styled.div`
     height: 18%;
-    width: 38%;
+    min-height: 170px;
+    width: 98%;
     padding:20px;
     background-color: hsl(0, 0%, 100%);
     border-radius: 10px;
@@ -52,14 +53,15 @@ export const CommentWrapper = styled.div`
 
 export const RepliesWrapper = styled.div`
     height: 18%;
-    width: 34%;
+    min-height: 170px;
+    width: 90%;
     padding:20px;
     background-color: hsl(0, 0%, 100%);
     border-radius: 10px;
     margin:10px;
     display:flex;
     position:relative;
-    left: 2%;
+    left: 4%;
 
     &::before{
         content:"";
@@ -68,8 +70,8 @@ export const RepliesWrapper = styled.div`
         width:2px;
         height: 111%;
         position: absolute;
-        left: -6%;
-        top: -2%;
+        left: -4.5%;
+        top: -1%;
     }
 
     .left,.right{

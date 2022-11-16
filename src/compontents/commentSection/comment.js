@@ -1,6 +1,6 @@
 import React from 'react';
 import { CommentWrapper, RepliesWrapper } from './commentStyled';
-import  ScoreBar  from './score/scoreBar';
+import  ScoreBar  from './scoreBar/scoreBar';
 
 
 const Comment = (props) => {
