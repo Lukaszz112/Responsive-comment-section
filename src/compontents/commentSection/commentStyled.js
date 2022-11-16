@@ -10,7 +10,6 @@ export const CommentWrapper = styled.div`
 
     .left,.right{
         display:flex;
-
         justify-content:center;
     }
 
@@ -20,22 +19,47 @@ export const CommentWrapper = styled.div`
     }
 
     .right{
-        padding:20px;
+        padding-bottom:20px;
+        padding-left:20px;
         flex-direction:column;
         align-items:center;
+        
+        p{
+            color:grey;
+        }
+    }
+
+    .upper{
+        height:100%;
+        width:100%;
+        display:flex;
+        padding:0px;
+        align-items:center;
+        justify-content:flex-start;
+        margin-bottom:10px;
+        img{
+            max-width:6%;
+            margin-right: 2%;
+        }
+        p{
+            margin-right:10px;
+        }
+        .username{
+            font-weight:500;
+        }
     }
 `
 
 export const RepliesWrapper = styled.div`
     height: 18%;
-    width: 35%;
+    width: 34%;
     padding:20px;
     background-color: hsl(0, 0%, 100%);
-    border-radius: 20px;
+    border-radius: 10px;
     margin:10px;
     display:flex;
     position:relative;
-    left: 1.6%;
+    left: 2%;
 
     &::before{
         content:"";
@@ -44,7 +68,7 @@ export const RepliesWrapper = styled.div`
         width:2px;
         height: 111%;
         position: absolute;
-        left: -5%;
+        left: -6%;
         top: -2%;
     }
 
@@ -62,5 +86,29 @@ export const RepliesWrapper = styled.div`
         padding:20px;
         flex-direction:column;
         align-items:center;
+
+        p{
+            color:grey;
+        }
+    }
+
+    .upper{
+        height:100%;
+        width:100%;
+        display:flex;
+        padding:0px;
+        align-items:center;
+        justify-content:flex-start;
+        margin-bottom:10px;
+        img{
+            max-width:6%;
+            margin-right: 2%;
+        }
+        p{
+            margin-right:10px;
+        }
+        .username{
+            font-weight:500;
+        }
     }
 `

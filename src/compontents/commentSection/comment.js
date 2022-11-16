@@ -15,13 +15,17 @@ const Comment = (props) => {
                                     <ScoreBar data={comment.score}/>
                                 </div>
                                 <div className="right">
-                                    <img src={comment.user.image.png} alt="" />
-                                    <p>{comment.user.username}</p>
-                                    <p>{comment.createdAt}</p>
-                                    <div className="commentContent">
-                                        <p>{comment.content}</p>
+                                    <div className="upper">
+                                        <img src={require('../../img/avatars/'+comment.user.image.png)} alt="" />
+                                        <p className="username">{comment.user.username}</p>
+                                        <p className="createdAt">{comment.createdAt}</p>
                                     </div>
-                                </div>
+                                    <div className="lower">
+                                        <div className="commentContent">
+                                            <p>{comment.content}</p>
+                                        </div>
+                                    </div>
+                                  </div>
                             </CommentWrapper>
                                 {comment.replies.length>0 ? comment.replies.map((rep) => {
                                     return(
@@ -31,11 +35,15 @@ const Comment = (props) => {
                                                     <ScoreBar data={rep.score}/>
                                                 </div>
                                                 <div className="right">
-                                                    <img src={rep.user.image.png} alt="" />
-                                                    <p>{rep.user.username}</p>
-                                                    <p>{rep.createdAt}</p>
-                                                    <div className="commentContent">        
-                                                        <p><span className="replyingTo">@{rep.replyingTo} </span>{rep.content}</p>
+                                                    <div className="upper">
+                                                        <img src={require('../../img/avatars/'+rep.user.image.png)} alt="" />
+                                                        <p className="username">{rep.user.username}</p>
+                                                        <p>{rep.createdAt}</p>
+                                                    </div>
+                                                    <div className="lower">
+                                                        <div className="commentContent">        
+                                                            <p><span className="replyingTo">@{rep.replyingTo} </span>{rep.content}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                         </RepliesWrapper>   
