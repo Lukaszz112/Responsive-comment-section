@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { ScoreBarWrapper } from './scoreBarStyled'
 import {ReactComponent as PlusIcon} from "../../../img/icon-plus.svg"
 import {ReactComponent as MinusIcon} from "../../../img/icon-minus.svg"
@@ -13,9 +12,8 @@ class ScoreBar extends React.Component{
             isRatePlus: false,
             isRateMinus: false,
         }
-    }
-    render(){
-        const scorePlusHandle = () =>{
+
+        this.scorePlusHandle = () =>{
             if(this.state.isRatePlus){
                 this.setState({
                     isClassic: true,
@@ -29,7 +27,7 @@ class ScoreBar extends React.Component{
             })
         }
 
-        const scoreMinusHandle = () =>{
+        this.scoreMinusHandle = () =>{
             if(this.state.isRateMinus){
                 this.setState({
                     isClassic: true,
@@ -42,16 +40,18 @@ class ScoreBar extends React.Component{
                 isRateMinus: true,
             })
         }
+    }    
+    render(){
         return (
-            <ScoreBarWrapper>
-                <div className="plus" onClick={scorePlusHandle}>
-                    <PlusIcon state={this.state.isRatePlus}/>
+            <ScoreBarWrapper state={this.state}>
+                <div className="plus" onClick={this.scorePlusHandle}>
+                    <PlusIcon/>
                 </div>
                 <div className="score">
                     <p>{this.state.isRatePlus ? this.state.score+1:(this.state.isRateMinus ? this.state.score-1:this.state.score)}</p>
                 </div>
-                <div className="minus" onClick={scoreMinusHandle} >
-                    <MinusIcon state={this.state.isRateMinus}/>
+                <div className="minus" onClick={this.scoreMinusHandle}>
+                    <MinusIcon/>
                 </div>
             </ScoreBarWrapper>
         )

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommentWrapper } from './commentStyled';
+import { CommentWrapper, RepliesWrapper } from './commentStyled';
 import  ScoreBar  from './score/scoreBar';
 
 
@@ -23,23 +23,24 @@ const Comment = (props) => {
                                     </div>
                                 </div>
                             </CommentWrapper>
-                            {comment.replies.length>0 ? comment.replies.map((rep) => {
-                                return(
-                                    <div className="replies" key={rep.id}>
-                                        <div className="left">
-
-                                        </div>
-                                        <div className="right">
-                                            <img src={rep.user.image.png} alt="" />
-                                            <p>{rep.user.username}</p>
-                                            <p>{rep.createdAt}</p>
-                                            <div className="commentContent">
-                                                <p>{rep.content}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            }):null}
+                                {comment.replies.length>0 ? comment.replies.map((rep) => {
+                                    return(
+                                        <RepliesWrapper key={rep.id}>
+                                            
+                                                <div className="left">
+                                                    <ScoreBar data={rep.score}/>
+                                                </div>
+                                                <div className="right">
+                                                    <img src={rep.user.image.png} alt="" />
+                                                    <p>{rep.user.username}</p>
+                                                    <p>{rep.createdAt}</p>
+                                                    <div className="commentContent">        
+                                                        <p><span className="replyingTo">@{rep.replyingTo} </span>{rep.content}</p>
+                                                    </div>
+                                                </div>
+                                        </RepliesWrapper>   
+                                    )
+                                }):null}
                         </>
                     )
                 })

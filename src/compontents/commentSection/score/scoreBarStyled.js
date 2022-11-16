@@ -26,29 +26,25 @@ export const ScoreBarWrapper = styled.div`
     }
 
     .plus:hover,.minus:hover{
-        svg{
-            transform:scale(1.5);
+        path{
+            fill:hsl(238, 40%, 52%);
         }
         cursor:pointer;
     }
 
-    .score{
-
-    }
-
     .plus{
-        border-top-left-radius:10px;
-        border-top-right-radius:10px;
+        path{
+            fill:${props => props.state.isRatePlus ? "hsl(238, 40%, 52%)":""};
+            transition:all .1s ease-in-out;
+        }
     }
 
     .minus{
-        border-bottom-left-radius:10px;
-        border-bottom-right-radius:10px;
+        path{
+            fill:${props => props.state.isRateMinus ? "hsl(238, 40%, 52%)":""};
+            transition:all .1s ease-in-out;
+        }
     }
 
-    svg{
-        transition:all .2s ease-in-out;
-
-    }
-
+    
 `
