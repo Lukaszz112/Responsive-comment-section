@@ -39,7 +39,7 @@ export const CommentWrapper = styled.div`
         justify-content:flex-start;
         margin-bottom:10px;
         img{
-            max-width:6%;
+            max-width:4%;
             margin-right: 2%;
         }
         p{
@@ -103,7 +103,7 @@ export const RepliesWrapper = styled.div`
         justify-content:flex-start;
         margin-bottom:10px;
         img{
-            max-width:6%;
+            max-width:5%;
             margin-right: 2%;
         }
         p{
@@ -113,4 +113,19 @@ export const RepliesWrapper = styled.div`
             font-weight:500;
         }
     }
+`
+
+export const CurrentUserBar = styled.div`
+    height:20px;
+    width:35px;
+    background-color:hsl(238, 40%, 52%);
+    color:white;
+    font-size:.8em;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:5px;
+    margin-right:15px;
+    border-radius:3px;
+
 `

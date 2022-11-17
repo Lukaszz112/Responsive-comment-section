@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommentWrapper, RepliesWrapper } from './commentStyled';
+import { CommentWrapper, RepliesWrapper, CurrentUserBar } from './commentStyled';
 import  ScoreBar  from './scoreBar/scoreBar';
 
 
@@ -18,6 +18,7 @@ const Comment = (props) => {
                                     <div className="upper">
                                         <img src={require('../../img/avatars/'+comment.user.image.png)} alt="" />
                                         <p className="username">{comment.user.username}</p>
+                                        {comment.user.username == props.Data.currentUser.username ? <CurrentUserBar>you</CurrentUserBar>:null}
                                         <p className="createdAt">{comment.createdAt}</p>
                                     </div>
                                     <div className="lower">
@@ -38,6 +39,7 @@ const Comment = (props) => {
                                                     <div className="upper">
                                                         <img src={require('../../img/avatars/'+rep.user.image.png)} alt="" />
                                                         <p className="username">{rep.user.username}</p>
+                                                        {rep.user.username == props.Data.currentUser.username ? <CurrentUserBar>you</CurrentUserBar>:null}
                                                         <p>{rep.createdAt}</p>
                                                     </div>
                                                     <div className="lower">
