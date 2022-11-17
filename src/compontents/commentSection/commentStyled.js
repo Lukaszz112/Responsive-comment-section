@@ -39,7 +39,7 @@ export const CommentWrapper = styled.div`
         justify-content:flex-start;
         margin-bottom:10px;
         img{
-            max-width:4%;
+            max-width:10%;
             margin-right: 2%;
         }
         p{
@@ -47,6 +47,39 @@ export const CommentWrapper = styled.div`
         }
         .username{
             font-weight:500;
+        }
+
+        .upperLeft{
+            width:50%;
+            height:100%;
+            display:flex;
+            flex-direction:row;
+            align-items:center;
+            justify-content:flex-start;
+        }
+
+        .upperRight{
+            width:50%;
+            height:100%;
+            display:flex;
+            flex-direction:row;
+            align-items:flex-start;
+            justify-content:flex-end;
+
+            button{
+                background-color: transparent;
+                border:none;
+                color:hsl(238, 40%, 52%);
+                font-weight:500;
+                padding: 3%;
+                position:relative;
+                top: -2.5px;
+
+                &:hover{
+                    cursor:pointer;
+                    opacity:.7;
+                }
+            }
         }
     }
 `
@@ -102,15 +135,51 @@ export const RepliesWrapper = styled.div`
         align-items:center;
         justify-content:flex-start;
         margin-bottom:10px;
+
         img{
-            max-width:5%;
+            max-width:10%;
             margin-right: 2%;
         }
+
         p{
             margin-right:10px;
         }
+
         .username{
             font-weight:500;
+        }
+
+        .upperLeft{
+            width:50%;
+            height:100%;
+            display:flex;
+            flex-direction:row;
+            align-items:center;
+            justify-content:flex-start;
+        }
+
+        .upperRight{
+            width:50%;
+            height:100%;
+            display:flex;
+            flex-direction:row;
+            align-items:flex-start;
+            justify-content:flex-end;
+
+            button{
+                background-color: transparent;
+                border:none;
+                color:hsl(238, 40%, 52%);
+                font-weight:500;
+                padding: 2%;
+                position:relative;
+                top: -2.5px;
+
+                &:hover{
+                    cursor:pointer;
+                    opacity:.7;
+                }
+            }
         }
     }
 `
